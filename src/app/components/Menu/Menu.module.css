@@ -1,0 +1,45 @@
+/* Menu.module.css */
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.menu p {
+    display: inline-block;
+}
+
+.menu a {
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+    color: var(--menu-unselected);
+    position: relative;
+}
+
+.menu a:hover, .menu a.selected {
+    color: var(--foreground);
+    font-weight: 500;
+}
+
+.menu a:hover::before,
+.menu a:hover::after,
+.menu a.selected::before,
+.menu a.selected::after {
+    color: var(--foreground);
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+}
+
+.menu a:hover::before,
+.menu a.selected::before {
+    content: "[";
+    left: -6px;
+}
+
+.menu a:hover::after,
+.menu a.selected::after {
+    content: "]";
+    right: -6px;
+}
