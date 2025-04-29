@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 1em 2em;
+    position: fixed;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 0.875em;
+    text-transform: uppercase;
+}
