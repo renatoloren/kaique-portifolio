@@ -1,6 +1,8 @@
-.welcome{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container{
+    overflow: auto;
+    box-sizing: border-box;
+    min-height: 100vh;
+
+    background-color: #111315;
+    color: #d6d6d6;
 }

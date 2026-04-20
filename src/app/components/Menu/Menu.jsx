@@ -13,7 +13,7 @@ export default function Menu() {
   ];
 
   const handleClick = (event, menuId) => {
-    event.preventDefault(); // Previne a navegação padrão do link
+    // event.preventDefault(); // Previne a navegação padrão do link
     setSelectedMenu(menuId); // Atualiza o estado com o id do menu selecionado
   };
 

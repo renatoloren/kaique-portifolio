@@ -1,0 +1,30 @@
+.projects {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    gap: 100px;
+}
+
+.projects h2{
+    font-size: 2em;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.project h3 {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.project img {
+    border-radius: 10px;
+    width: 800px;
+}

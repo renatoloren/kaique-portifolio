@@ -1,16 +1,20 @@
 'use client';
 
 import Header from '../Header/Header';
-import HomeText from '../HomeText/HomeText';
+import Welcome from '../Welcome/Welcome';
+import About from '../About/About';
+import Projects from '../Projects/Projects';
+import Contact from '../Contact/Contact';
 import styles from './Home.module.css'
 
 export default function Home() {
   return (
     <div className={styles.container}>
         <Header />
-        <section className={styles.welcome}>
-            <HomeText />
-        </section>
+        <Welcome />
+        <About/>
+        <Projects/>
+        <Contact />
     </div>
   );
 }

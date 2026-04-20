@@ -1,0 +1,23 @@
+.welcome {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.welcome_name,
+.welcome_role {
+    text-transform: uppercase;
+    font-size: clamp(3rem, 9vw, 7rem);
+    min-height: clamp(3rem, 10vw, 8rem);
+    overflow: hidden;
+}
+
+.welcome_name {
+    font-weight: 800;
+}
+
+.welcome_role {
+    font-weight: 200;
+}
