@@ -11,15 +11,10 @@
 
 .menu a {
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 600;
     text-decoration: none;
-    color: var(--menu-unselected);
+    /* color: var(--menu-unselected); */
     position: relative;
-}
-
-.menu a:hover, .menu a.selected {
-    color: var(--foreground);
-    font-weight: 500;
 }
 
 .menu a:hover::before,

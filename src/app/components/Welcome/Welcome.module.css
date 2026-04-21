@@ -1,23 +1,55 @@
 .welcome {
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    padding-left: 30px;
+    background: rgba(23, 23, 23, 0);
+    /* background: linear-gradient(180deg, rgba(23, 23, 23, 1) 30%, rgba(255, 69, 0, 1) 100%); */
+    position: relative;
 }
 
 .welcome_name,
 .welcome_role {
-    text-transform: uppercase;
-    font-size: clamp(3rem, 9vw, 7rem);
-    min-height: clamp(3rem, 10vw, 8rem);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .welcome_name {
+    text-transform: uppercase;
     font-weight: 800;
+    font-size: 11em;
+    margin-bottom: -50px;
+    color: #ff4500;
+    z-index: 1;
 }
 
 .welcome_role {
-    font-weight: 200;
+    font-family: var(--font-instrument);
+    font-weight: 400;
+    text-transform: lowercase;
+    font-size: 10em;
+    font-style: italic;
+    align-self: flex-start;
+}
+
+.blur_one {
+    background: rgb(255, 69, 0);
+    background: radial-gradient(circle, rgba(255, 69, 0, 1) 30%, rgba(23, 23, 23, 0) 60%);
+    overflow: visible;
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    bottom: 60px;
+
+    z-index: 0;
+}
+
+.blur_bottom {
+    position: absolute;
+    width: 100vw;
+    background: rgb(255, 69, 0);
+    height: 20vh;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
 }

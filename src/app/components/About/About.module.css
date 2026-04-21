@@ -8,6 +8,8 @@
     justify-content: center;
 
     padding: 50px;
+    /* background-color: #ff4500; */
+    /* color: var(--foreground); */
 }
 
 .aboutText {
@@ -16,9 +18,9 @@
     flex-direction: column;
     text-align: center;
     font-size: 2em;
-    font-weight: 600;
+    font-weight: 800;
+    text-transform: uppercase;
 }
-
 
 @media (max-width: 768px) {
     .aboutText {

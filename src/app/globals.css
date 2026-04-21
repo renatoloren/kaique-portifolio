@@ -11,10 +11,11 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Lexend Deca", sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-transform: uppercase;
+  overflow-x: hidden;
 }
 
 * {

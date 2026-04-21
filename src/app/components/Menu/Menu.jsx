@@ -7,7 +7,7 @@ export default function Menu() {
   const [selectedMenu, setSelectedMenu] = useState(null);
 
   const menus = [
-    { id: "#about", text: "sobre", isSelected: false },
+    // { id: "#about", text: "sobre", isSelected: false },
     { id: "#projects", text: "projetos", isSelected: false },
     { id: "#contact", text: "contato", isSelected: false },
   ];

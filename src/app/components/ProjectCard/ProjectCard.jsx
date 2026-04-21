@@ -4,6 +4,11 @@ import styles from './ProjectCard.module.css'
 
 const ProjectCard = ({ image, title, date, videoUrl }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return null
@@ -62,7 +67,7 @@ const ProjectCard = ({ image, title, date, videoUrl }) => {
 
       {/* Portal renderiza o modal direto no document.body,
           escapando do transform-style: preserve-3d do cubo */}
-      {createPortal(modal, document.body)}
+      {mounted && createPortal(modal, document.body)}
     </>
   )
 }

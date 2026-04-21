@@ -11,6 +11,8 @@ export default function Welcome() {
       <h1 className={styles.welcome_role}>
         videomaker
       </h1>
+
+      {/* <div className={styles.blur_bottom}></div> */}
     </section>
   );
 }

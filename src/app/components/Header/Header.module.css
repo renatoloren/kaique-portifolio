@@ -4,17 +4,15 @@
 
     width: 100%;
     padding: 1em 2em;
-    position: fixed;
+    position: sticky;
     top: 0px;
 
-    background: rgba(255, 255, 255, 0.021);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: transparent;
     z-index: 2000;
 }
 
 .logo {
-    font-weight: 800;
+    font-weight: 600;
     font-size: 1em;
     text-transform: uppercase;
 }
