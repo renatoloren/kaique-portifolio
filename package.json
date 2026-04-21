@@ -6,14 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export",
-    "deploy": "gh-pages -d out"
+    "lint": "next lint"
   },
   "dependencies": {
-    "gh-pages": "^6.3.0",
     "gsap": "^3.12.7",
-    "next": "15.3.8",
+    "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
