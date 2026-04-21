@@ -8,7 +8,9 @@
     justify-content: center;
 
     padding: 50px;
-    /* background-color: #ff4500; */
+    /* background-color: rgba(255, 47, 0, 0.85); */
+
+    /* filter: blur(10px); */
     /* color: var(--foreground); */
 }
 

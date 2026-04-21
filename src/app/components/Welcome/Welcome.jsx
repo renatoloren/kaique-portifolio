@@ -1,5 +1,6 @@
 'use client';
 
+import LavaLamp from '../LavaLamp/LavaLamp';
 import styles from './Welcome.module.css'
 
 export default function Welcome() {
@@ -12,7 +13,10 @@ export default function Welcome() {
         videomaker
       </h1>
 
-      {/* <div className={styles.blur_bottom}></div> */}
+      {/* <div className={styles.blur}>
+
+      </div> */}
+<LavaLamp />
     </section>
   );
 }

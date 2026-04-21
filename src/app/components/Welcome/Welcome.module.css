@@ -18,7 +18,7 @@
     font-weight: 800;
     font-size: 11em;
     margin-bottom: -50px;
-    color: #ff4500;
+    color: rgba(255, 47, 0, 0.85);
     z-index: 1;
 }
 
@@ -31,25 +31,12 @@
     align-self: flex-start;
 }
 
-.blur_one {
-    background: rgb(255, 69, 0);
-    background: radial-gradient(circle, rgba(255, 69, 0, 1) 30%, rgba(23, 23, 23, 0) 60%);
-    overflow: visible;
-    border-radius: 100%;
-    width: 300px;
-    height: 300px;
+.blur {
     position: absolute;
-    bottom: 60px;
-
-    z-index: 0;
-}
-
-.blur_bottom {
-    position: absolute;
+    bottom: 0px;
+    left: 0px;
     width: 100vw;
-    background: rgb(255, 69, 0);
-    height: 20vh;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
+    height: 50vh;
+    backdrop-filter: blur(10px);
+    z-index: 200;
 }
