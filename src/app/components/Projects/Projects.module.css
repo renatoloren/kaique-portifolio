@@ -14,22 +14,19 @@
 }
 
 .heading {
-    position: absolute;
-    top: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: clamp(0.75rem, 1vw, 1rem);
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    opacity: 0.4;
-    margin: 0;
+    text-transform: capitalize;
     white-space: nowrap;
+    padding-left: 50px;
+    font-size: 2em;
+    font-family: var(--font-instrument);
+    font-style: italic;
 }
 
 .scene {
     position: relative;
-    width: 800px;
-    height: 450px;
+    width: 1000px;
+    height: 500px;
     /* Perspectiva definida no scene para que todos os cards compartilhem
      o mesmo ponto de fuga — essencial para a ilusão de vitrine */
     perspective: 1200px;

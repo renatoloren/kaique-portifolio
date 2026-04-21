@@ -94,9 +94,9 @@ const getCardStyle = (i) => {
       className={styles.projects}
       style={{ '--card-count': cards.length }}
     >
-      <div className={styles.sticky}>
-        <h2 className={styles.heading}>Projetos</h2>
+      <h2 className={styles.heading}>Projetos ({cards.length})</h2>
 
+      <div className={styles.sticky}>
         <div className={styles.scene}>
           {cards.map((card, i) => {
             const cardStyle = getCardStyle(i)
