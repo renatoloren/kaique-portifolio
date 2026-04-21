@@ -27,9 +27,11 @@
 }
 
 .scene {
-    width: 800px;
-    height: 400px;
+    width: 600px;
+    height: 300px;
     position: relative;
+    transform-style: preserve-3d;
+    /* ← era isso que faltava */
 }
 
 .cube {
@@ -51,12 +53,4 @@
 .face>* {
     width: 100% !important;
     height: 100% !important;
-}
-
-.face_front {
-    transform: translateZ(calc(min(560px, 70vh) / 2 + var(--gap)));
-}
-
-.face_bottom {
-    transform: rotateX(-90deg) translateZ(calc(min(560px, 70vh) / 2 + var(--gap)));
 }

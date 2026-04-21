@@ -24,7 +24,6 @@ const Projects = () => {
       setProgress(0)
       return
     }
-
     if (scrolled >= totalScroll) {
       setActiveIndex(cards.length - 1)
       setProgress(0)
@@ -45,10 +44,10 @@ const Projects = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [handleScroll])
 
-  const GAP = 40
+  const totalRotation = isLast ? activeIndex * 60 : (activeIndex + progress) * 60
 
-  // No último card, não rotaciona
-  const cubeRotation = isLast ? 0 : progress * 90
+  const CARD_H = 350
+  const RADIUS = CARD_H * (Math.sqrt(3) / 2)  // raio do hexágono (60°)
 
   return (
     <section
@@ -63,36 +62,35 @@ const Projects = () => {
           <div
             className={styles.cube}
             style={{
-              transform: `perspective(1200px) rotateX(${cubeRotation}deg)`,
+              transform: `perspective(900px) rotateX(${totalRotation}deg)`,
             }}
           >
-            {cards[activeIndex] && (
-              <div
-                className={`${styles.face} ${styles.face_front}`}
-                style={{ '--gap': `${GAP}px` }}
-              >
-                <ProjectCard
-                  image={cards[activeIndex].images[0]}
-                  title={cards[activeIndex].name}
-                  date={cards[activeIndex].date}
-                  videoUrl={cards[activeIndex].link}
-                />
-              </div>
-            )}
+            {cards.map((card, i) => {
+              const current = activeIndex + progress
+              const distance = Math.abs(i - current)
+              const opacity = isLast
+                  ? (i === activeIndex ? 1 : 0.3)
+                  : Math.max(0.2, 1 - distance * 1)
 
-            {!isLast && cards[activeIndex + 1] && (
-              <div
-                className={`${styles.face} ${styles.face_bottom}`}
-                style={{ '--gap': `${GAP}px` }}
-              >
-                <ProjectCard
-                  image={cards[activeIndex + 1].images[0]}
-                  title={cards[activeIndex + 1].name}
-                  date={cards[activeIndex + 1].date}
-                  videoUrl={cards[activeIndex + 1].link}
-                />
-              </div>
-            )}
+                  return (
+                    <div
+                      key={card.name}
+                      className={styles.face}
+                      style={{
+                        transform: `rotateX(${-i * 60}deg) translateZ(${RADIUS}px)`,
+                        opacity,
+                        transition: 'opacity 0.2s linear'
+                      }}
+                    >
+                      <ProjectCard
+                        image={card.images[0]}
+                        title={card.name}
+                        date={card.date}
+                        videoUrl={card.link}
+                      />
+                    </div>
+                  )
+                })}
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import styles from './ProjectCard.module.css'
 
 const ProjectCard = ({ image, title, date, videoUrl }) => {
@@ -6,8 +7,7 @@ const ProjectCard = ({ image, title, date, videoUrl }) => {
 
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return null
-    
-    // Suporta formatos: youtu.be/ID, youtube.com/watch?v=ID, youtube.com/embed/ID
+
     const patterns = [
       /youtu\.be\/([a-zA-Z0-9_-]{11})/,
       /youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/,
@@ -22,7 +22,6 @@ const ProjectCard = ({ image, title, date, videoUrl }) => {
     return null
   }
 
-  // Fecha o modal com a tecla Esc
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setIsModalOpen(false)
@@ -32,6 +31,23 @@ const ProjectCard = ({ image, title, date, videoUrl }) => {
   }, [isModalOpen])
 
   const embedUrl = getYouTubeEmbedUrl(videoUrl)
+
+  const modal = isModalOpen && (
+    <div className={styles.modal_overlay} onClick={() => setIsModalOpen(false)}>
+      <div className={styles.modal_content} onClick={(e) => e.stopPropagation()}>
+        <button className={styles.modal_close} onClick={() => setIsModalOpen(false)}>
+          ✕
+        </button>
+        <iframe
+          src={embedUrl}
+          title={title}
+          frameBorder="0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  )
 
   return (
     <>
@@ -44,22 +60,9 @@ const ProjectCard = ({ image, title, date, videoUrl }) => {
         <p className={styles.project_date}>{date}</p>
       </div>
 
-      {isModalOpen && (
-        <div className={styles.modal_overlay} onClick={() => setIsModalOpen(false)}>
-          <div className={styles.modal_content} onClick={(e) => e.stopPropagation()}>
-            <button className={styles.modal_close} onClick={() => setIsModalOpen(false)}>
-              ✕
-            </button>
-            <iframe
-              src={embedUrl}
-              title={title}
-              frameBorder="0"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
+      {/* Portal renderiza o modal direto no document.body,
+          escapando do transform-style: preserve-3d do cubo */}
+      {createPortal(modal, document.body)}
     </>
   )
 }
