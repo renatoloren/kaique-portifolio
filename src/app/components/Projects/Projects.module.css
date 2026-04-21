@@ -1,30 +1,62 @@
 .projects {
-    /* background-color: red; */
+    height: calc(var(--card-count) * 100vh + 100vh);
+    position: relative;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0;
-    gap: 100px;
+    justify-content: center;
 }
 
-.projects h2{
-    font-size: 2em;
+.heading {
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin: 0;
+    white-space: nowrap;
 }
 
-.project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-}
-
-.project h3 {
-    font-size: 3em;
-    font-weight: 500;
-}
-
-.project img {
-    border-radius: 10px;
+.scene {
     width: 800px;
+    height: 400px;
+    position: relative;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.face>* {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.face_front {
+    transform: translateZ(calc(min(560px, 70vh) / 2 + var(--gap)));
+}
+
+.face_bottom {
+    transform: rotateX(-90deg) translateZ(calc(min(560px, 70vh) / 2 + var(--gap)));
 }

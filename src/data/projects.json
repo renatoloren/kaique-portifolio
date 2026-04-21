@@ -20,5 +20,16 @@
     "images": [
       "images/projects/2/image2.gif"
     ]
+  },
+    {
+    "id": 2,
+    "name": "Meu Projeto 3",
+    "date": "Outubro 2024",
+    "for": "Imobiliaria X",
+    "description": "Descrição do projeto 2.",
+    "link": "https://www.youtube.com/watch?v=IIP1YjGa3n4",
+    "images": [
+      "images/projects/2/image2.gif"
+    ]
   }
 ]

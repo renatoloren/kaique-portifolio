@@ -1,8 +1,5 @@
 .container{
-    overflow: auto;
     box-sizing: border-box;
-    min-height: 100vh;
-
     background-color: #111315;
     color: #d6d6d6;
 }
