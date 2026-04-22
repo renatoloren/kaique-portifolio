@@ -1,74 +1,110 @@
+/* ── Card ─────────────────────────────────────────────────── */
 .project {
-    border-radius: 4px;
+    border-radius: 8px;
     overflow: hidden;
-
-    transition: transform 0.05s linear;
-    background-color: red;
-    height: 400px;
-    width: 800px;
-
+    background-color: #111;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    justify-content: flex-end;
+    align-items: flex-start;
     cursor: pointer;
+    position: relative;
+}
+
+/* Gradiente de legenda */
+.project::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.project_info {
+    position: relative;
+    z-index: 1;
+    padding: 20px 24px;
 }
 
 .project_title {
     font-weight: 800;
-    font-size: 2em;
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0 0 4px;
+    line-height: 1.2;
 }
 
+.project_date {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+}
 
+/* ── Modal overlay ────────────────────────────────────────── */
 .modal_overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.88);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
     animation: fadeIn 0.2s ease;
+    padding: 20px;
 }
 
+/* ── Modal content — abraça o vídeo ──────────────────────── */
 .modal_content {
     position: relative;
-    width: 90vw;
-    max-width: 900px;
-    aspect-ratio: 16 / 9;
     background: #000;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
     animation: scaleIn 0.25s ease;
+
+    /* Tamanho calculado em JS via style inline */
+    width: var(--modal-w);
+    height: var(--modal-h);
+    max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 80px);
 }
 
 .modal_content iframe {
     width: 100%;
     height: 100%;
     border: none;
+    display: block;
 }
 
 .modal_close {
     position: absolute;
-    top: -40px;
-    right: 0;
-    background: transparent;
+    top: 10px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.5);
     border: none;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    line-height: 1;
+    z-index: 10;
     opacity: 0.8;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, background 0.2s;
 }
 
 .modal_close:hover {
     opacity: 1;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 @keyframes fadeIn {
@@ -83,7 +119,7 @@
 
 @keyframes scaleIn {
     from {
-        transform: scale(0.92);
+        transform: scale(0.93);
         opacity: 0
     }
 

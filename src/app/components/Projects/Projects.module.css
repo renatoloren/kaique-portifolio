@@ -11,10 +11,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .heading {
-    font-size: clamp(0.75rem, 1vw, 1rem);
     text-transform: capitalize;
     white-space: nowrap;
     padding-left: 50px;
@@ -23,15 +23,13 @@
     font-style: italic;
 }
 
+/* Desktop */
 .scene {
     position: relative;
-    width: 1000px;
-    height: 500px;
-    /* Perspectiva definida no scene para que todos os cards compartilhem
-     o mesmo ponto de fuga — essencial para a ilusão de vitrine */
+    width: min(1000px, 90vw);
+    height: min(500px, 50vh);
     perspective: 1200px;
     perspective-origin: 30% 50%;
-    /* ponto de fuga levemente à esquerda = vitrine */
     transform-style: preserve-3d;
 }
 
@@ -46,4 +44,13 @@
 .card_wrapper>* {
     width: 100% !important;
     height: 100% !important;
+}
+
+/* Mobile — cartão vertical estilo Instagram */
+@media (max-width: 640px) {
+    .scene {
+        width: min(320px, 80vw);
+        height: min(568px, 80vh);
+        perspective-origin: 50% 50%;
+    }
 }
