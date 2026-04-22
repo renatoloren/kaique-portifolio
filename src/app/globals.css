@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
+  --primary: rgba(255, 47, 0, 0.85);
   --tertiary: #979797;
   --menu-unselected: var(--tertiary);
 }

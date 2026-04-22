@@ -2,41 +2,44 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-left: 30px;
-    background: rgba(23, 23, 23, 0);
-    /* background: linear-gradient(180deg, rgba(23, 23, 23, 1) 30%, rgba(255, 69, 0, 1) 100%); */
     position: relative;
+    margin: 0 auto;
+    padding: 0 2em;
 }
 
 .welcome_name,
 .welcome_role {
-    overflow: visible;
+    /* overflow: visible; */
 }
 
 .welcome_name {
     text-transform: uppercase;
     font-weight: 800;
-    font-size: 11em;
-    margin-bottom: -50px;
-    color: rgba(255, 47, 0, 0.85);
+    font-size: clamp(16px, 11.3vw, 180px);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    /* margin-bottom: -30px; */
+    color: var(--primary);
     z-index: 1;
+    align-self: center;
 }
 
 .welcome_role {
     font-family: var(--font-instrument);
     font-weight: 400;
     text-transform: lowercase;
-    font-size: 10em;
+    font-size: 3em;
     font-style: italic;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .blur {
     position: absolute;
     bottom: 0px;
     left: 0px;
-    width: 100vw;
-    height: 50vh;
+    width: 99vw;
+    height: 50%;
     backdrop-filter: blur(10px);
     z-index: 200;
+    background-color: transparent;
 }

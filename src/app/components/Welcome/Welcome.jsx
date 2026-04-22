@@ -13,10 +13,10 @@ export default function Welcome() {
         videomaker
       </h1>
 
-      {/* <div className={styles.blur}>
+      <div className={styles.blur}/>
 
-      </div> */}
-<LavaLamp />
+      <LavaLamp />
+
     </section>
   );
 }
