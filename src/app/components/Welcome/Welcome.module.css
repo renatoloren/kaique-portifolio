@@ -1,10 +1,10 @@
 .welcome {
-    height: 100vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     position: relative;
     margin: 0 auto;
-    padding: 0 2em;
+    /* padding: 0 2em; */
 }
 
 .welcome_name,
@@ -33,13 +33,21 @@
     align-self: center;
 }
 
-.blur {
+.lavaWrapper {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: blue; */
+    filter: blur(10px);
+}
+
+.transition {
+    background: var(--primary);
+        background: linear-gradient(180deg, var(--primary) 70%, rgba(23, 23, 23, 1) 100%);
+    width: 100vw;
     position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 99vw;
-    height: 50%;
-    backdrop-filter: blur(10px);
-    z-index: 200;
-    background-color: transparent;
+    bottom: 0;
+    height: 60%;
+    /* background-color: var(--primary); */
 }

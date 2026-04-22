@@ -17,7 +17,7 @@
 .heading {
     text-transform: capitalize;
     white-space: nowrap;
-    padding-left: 50px;
+    padding: 50px;
     font-size: 2em;
     font-family: var(--font-instrument);
     font-style: italic;
@@ -26,7 +26,7 @@
 /* Desktop */
 .scene {
     position: relative;
-    width: min(1000px, 90vw);
+    width: min(800px, 80vw);
     height: min(500px, 50vh);
     perspective: 1200px;
     perspective-origin: 30% 50%;

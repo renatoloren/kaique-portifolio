@@ -89,12 +89,14 @@ const getCardStyle = (i) => {
 }
 
   return (
-    <section
+    <>
+    <div>
+      <h2 className={styles.heading}>Projetos ({cards.length})</h2>
+<section
       ref={sectionRef}
       className={styles.projects}
       style={{ '--card-count': cards.length }}
     >
-      <h2 className={styles.heading}>Projetos ({cards.length})</h2>
 
       <div className={styles.sticky}>
         <div className={styles.scene}>
@@ -128,6 +130,9 @@ const getCardStyle = (i) => {
         </div>
       </div>
     </section>
+    </div>
+    </>
+    
   )
 }
 
