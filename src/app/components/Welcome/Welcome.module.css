@@ -15,7 +15,7 @@
 .welcome_name {
     text-transform: uppercase;
     font-weight: 800;
-    font-size: clamp(16px, 11.3vw, 180px);
+    font-size: clamp(16px, 11.3vw, 1000px);
     letter-spacing: 0.02em;
     white-space: nowrap;
     /* margin-bottom: -30px; */
