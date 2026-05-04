@@ -8,7 +8,7 @@ const About = () => {
                <h1 className={styles.section_title}>
                   {"Pensamentos em vídeo... "}
                </h1>
-           <img src='images/me_1.jpeg' className={styles.about_picture}/>
+           <img src='images/me_1.JPEG' className={styles.about_picture}/>
 
             <div className={styles.about_text}>
 
