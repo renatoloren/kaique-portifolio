@@ -1,10 +1,10 @@
 .welcome {
-    height: 60vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
     margin: 0 auto;
-    /* padding: 0 2em; */
+    padding: 0 2em;
 }
 
 .welcome_name,
@@ -18,36 +18,31 @@
     font-size: clamp(16px, 11.3vw, 1000px);
     letter-spacing: 0.02em;
     white-space: nowrap;
-    /* margin-bottom: -30px; */
     color: var(--primary);
     z-index: 1;
     align-self: center;
 }
 
-.welcome_role {
-    font-family: var(--font-instrument);
-    font-weight: 400;
-    text-transform: lowercase;
-    font-size: 3em;
-    font-style: italic;
+.welcome_role, 
+.highlight {
+    font-size: 40px;
     align-self: center;
+    text-transform: none;
+    line-height: 45px;
+    margin-top: 3em;
+
 }
 
-.lavaWrapper {
-    display: flex;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    /* background-color: blue; */
-    filter: blur(10px);
+.welcome_role{
+    font-weight: 600;
+    max-width: 400px;
+    font-family: var(--font-inter);
 }
 
-.transition {
-    background: var(--primary);
-        background: linear-gradient(180deg, var(--primary) 70%, rgba(23, 23, 23, 1) 100%);
-    width: 100vw;
-    position: absolute;
-    bottom: 0;
-    height: 60%;
-    /* background-color: var(--primary); */
+.highlight {
+    font-weight: 200;
+    font-family: var(--font-instrument);
+    font-style: italic;
+    font-size: 50px;
 }
+
