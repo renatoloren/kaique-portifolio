@@ -1,15 +1,8 @@
-.welcome {
+.welcome_section {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: 0 auto;
-    padding: 0 2em;
-}
-
-.welcome_name,
-.welcome_role {
-    overflow: visible;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: start;
 }
 
 .welcome_name {
@@ -19,24 +12,26 @@
     letter-spacing: 0.02em;
     white-space: nowrap;
     color: var(--primary);
-    z-index: 1;
-    align-self: center;
+
+    grid-column: span 5;
+    grid-row: 1;
+    margin: 0 auto;
 }
 
-.welcome_role, 
+.welcome_subtitle, 
 .highlight {
     font-size: 40px;
     align-self: center;
     text-transform: none;
     line-height: 45px;
-    margin-top: 3em;
-
 }
 
-.welcome_role{
+.welcome_subtitle{
     font-weight: 600;
     max-width: 400px;
     font-family: var(--font-inter);
+    grid-column: 2 / span 2;
+    align-self: start;
 }
 
 .highlight {
@@ -46,3 +41,18 @@
     font-size: 50px;
 }
 
+@media (max-width: 690px) {
+
+    
+    .welcome_subtitle {
+        min-width: 80vw;
+    }
+
+    .welcome_subtitle{
+        font-size: 30px;
+    }
+
+    .highlight {
+        font-size: 35px;
+    }
+}

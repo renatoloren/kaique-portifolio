@@ -16,3 +16,9 @@
     font-size: 1em;
     text-transform: uppercase;
 }
+
+@media (max-width: 690px) {
+    .header {
+            padding: 1em 10px;
+    }
+}

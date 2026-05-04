@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 :root {
-  --background: #ffffff;
+  --background: #000;
   --foreground: #171717;
   --primary: rgba(255, 47, 0, 0.85);
   --tertiary: #979797;
