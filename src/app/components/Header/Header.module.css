@@ -4,9 +4,8 @@
 
     width: 100%;
     padding: 1em 2em;
-    position: sticky;
+    position: absolute;
     top: 0px;
-
     background: transparent;
     z-index: 2000;
 }

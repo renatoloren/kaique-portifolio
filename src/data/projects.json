@@ -1,29 +1,29 @@
 [
   {
-    "client": "Estapar",
-    "title": "Muito mais que Estacionamento",
-    "label": "Filme Institucional",
-    "youtubeId": "dQw4w9WgXcQ",
+    "client": "Criaturas da Noite",
+    "title": "",
+    "label": "Fashion Film",
+    "youtubeId": "KWoTyfPsqbE",
     "media": {
       "type": "img",
-      "src": "images/projects/1/image1.gif"
+      "src": "images/projects/1/fashion-film.gif"
     }
   },
   {
-    "client": "EY",
-    "title": "Empreendedor do Ano",
-    "label": "Evento Corporativo",
-    "youtubeId": "dQw4w9WgXcQ",
+    "client": "Premium Luxury Home",
+    "title": "",
+    "label": "Marketing Imobiliário",
+    "youtubeId": "KWoTyfPsqbE",
     "media": {
       "type": "img",
-      "src": "images/projects/2/image2.gif"
+      "src": "images/projects/2/house-tour.gif"
     }
   },
   {
     "client": "Correios",
     "title": "Seu Perrengue Vale um Chip",
     "label": "Filme Publicitário",
-    "youtubeId": "dQw4w9WgXcQ",
+    "youtubeId": "KWoTyfPsqbE",
     "media": {
       "type": "img",
       "src": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1400&q=80"
@@ -33,20 +33,10 @@
     "client": "Senna Brand",
     "title": "Institucional",
     "label": "Branded Content",
-    "youtubeId": "dQw4w9WgXcQ",
+    "youtubeId": "KWoTyfPsqbE",
     "media": {
       "type": "img",
       "src": "https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=1400&q=80"
-    }
-  },
-  {
-    "client": "Zul+",
-    "title": "IPVA Premiado",
-    "label": "Campanha Digital",
-    "youtubeId": "dQw4w9WgXcQ",
-    "media": {
-      "type": "img",
-      "src": "https://images.unsplash.com/photo-1593359677879-a4bb92f829e1?w=1400&q=80"
     }
   }
 ]

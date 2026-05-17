@@ -6,22 +6,19 @@ import About from '../About/About';
 import Contact from '../Contact/Contact';
 import styles from './Home.module.css'
 import ScrollShowcase from '../Projects/ScrollShowcase';
+import SmoothScroll from '../SmoothScroll';
 
 export default function Home() {
   return (
-    <>
 
-    <div className={styles.container}>
-      
-        <Header />
-        <Welcome />
-        <About/>
+    <SmoothScroll>
+            <Header />
+            <Welcome />
+            <About/>
 
-        <ScrollShowcase/>
+            <ScrollShowcase/>
 
-        <Contact />
-    </div>
-    </>
-
+            <Contact />
+    </SmoothScroll>
   );
 }

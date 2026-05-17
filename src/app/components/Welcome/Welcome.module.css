@@ -1,37 +1,124 @@
 .welcome_section {
     height: 100vh;
+    position: relative;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    align-items: start;
+    overflow: hidden;
+}
+
+/* Divisórias + feixes de luz */
+.welcome_section .col {
+    position: relative;
+    border-right: 1px solid rgb(32, 32, 32);
+    overflow: hidden;
+}
+
+.welcome_section .col:last-child {
+    border-right: none;
+}
+
+.welcome_section .col::after {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -1px;
+    width: 2px;
+    height: 60%;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(255, 255, 255, 0) 10%,
+            rgba(75, 75, 75, 0.85) 50%,
+            rgba(255, 3, 3, 0) 90%,
+            transparent 100%);
+    animation: lightBeam 4s ease-in-out infinite;
+    animation-delay: var(--beam-delay);
+}
+
+.welcome_section .col:nth-child(1) {
+    --beam-delay: 5s;
+}
+
+.welcome_section .col:nth-child(2) {
+    --beam-delay: 0.6s;
+}
+
+.welcome_section .col:nth-child(3) {
+    --beam-delay: 1.2s;
+}
+
+.welcome_section .col:nth-child(4) {
+    --beam-delay: 2.4s;
+}
+
+.welcome_section .col:nth-child(5) {
+    --beam-delay: 1.8s;
+}
+
+@keyframes lightBeam {
+    0% {
+        top: -60%;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+/* Textos sobrepostos */
+.text_content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .welcome_name {
     text-transform: uppercase;
     font-weight: 800;
-    font-size: clamp(16px, 11.3vw, 1000px);
     letter-spacing: 0.02em;
-    white-space: nowrap;
     color: var(--primary);
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    text-align: center;
 
-    grid-column: span 5;
-    grid-row: 1;
-    margin: 0 auto;
+    /* O mesmo valor que já funcionava, mas descontando 2em de padding */
+    font-size: calc(11.6vw - (2em * 11.6 / 100));
+    padding: 0;
+    margin: 30px 0 0;
+    box-sizing: border-box;
 }
 
-.welcome_subtitle, 
-.highlight {
-    font-size: 40px;
-    align-self: center;
+.name_first,
+.name_last {
+    display: inline;
+}
+
+.welcome_subtitle {
     text-transform: none;
-    line-height: 45px;
-}
-
-.welcome_subtitle{
+    font-size: 40px;
     font-weight: 600;
     max-width: 400px;
+    line-height: 45px;
     font-family: var(--font-inter);
-    grid-column: 2 / span 2;
-    align-self: start;
+    /* posiciona na 2ª coluna aproximadamente */
+    margin-left: calc(20% + 1rem);
+    margin-top: 3em;
 }
 
 .highlight {
@@ -39,20 +126,51 @@
     font-family: var(--font-instrument);
     font-style: italic;
     font-size: 50px;
+    line-height: 55px;
+}
+
+.line_wrap {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.line_inner {
+    display: inline-block;
+    /* SEM transform aqui — GSAP controla */
 }
 
 @media (max-width: 690px) {
+    .welcome_name {
+        margin: 60px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        white-space: nowrap;
+        font-size: calc(23vw - (1em * 23 / 100));
+        padding: 0;
+    }
 
-    
+    .name_first {
+        letter-spacing: 4px;
+        line-height: 0.8em;
+    }
+
+    .name_first,
+    .name_last {
+        display: block;
+    }
+
     .welcome_subtitle {
-        min-width: 80vw;
+        margin-left: 30px;
     }
 
-    .welcome_subtitle{
-        font-size: 30px;
-    }
-
+    .welcome_subtitle,
     .highlight {
-        font-size: 35px;
+        font-size: 30px;
+        line-height: 35px;
+        max-width: 80%;
+        margin-top: 50%;
     }
+
 }

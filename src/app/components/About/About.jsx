@@ -6,21 +6,21 @@ const About = () => {
         <section id='about' className={styles.about}>
 
                <h1 className={styles.section_title}>
-                  {"Pensamentos em vídeo... "}
+                  {"Sobre mim"}
                </h1>
-           <img src='images/me_1.JPEG' className={styles.about_picture}/>
+           <img src='images/me_3.GIF' className={styles.about_picture}/>
 
             <div className={styles.about_text}>
 
 
                <p className={styles.aboutText}>
                         {"Experiência em filmagens, direção de fotografia e edição, crio vídeos que unem "}
-                        <span class={styles.highlight}>{"estética, "}</span> 
-                        <span class={styles.highlight}>{"ritmo e "}</span>
-                        <span class={styles.highlight}>{"storytelling "} </span> 
+                        <span className={styles.highlight}>{"estética, "}</span> 
+                        <span className={styles.highlight}>{"ritmo e "}</span>
+                        <span className={styles.highlight}>{"storytelling "} </span> 
                         {"para dar destaque à sua marca, coleção ou projeto pessoal. Qualificado para levar sua visão do papel para a tela com "} 
-                        <span class={styles.highlight}>{"criatividade e "}</span> 
-                        <span class={styles.highlight}>{"técnica."}</span> 
+                        <span className={styles.highlight}>{"criatividade e "}</span> 
+                        <span className={styles.highlight}>{"técnica."}</span> 
                </p>
             </div>
                
