@@ -10,15 +10,24 @@ import SmoothScroll from '../SmoothScroll';
 
 export default function Home() {
   return (
-
     <SmoothScroll>
-            <Header />
+      <Header />
+      <div className={styles.container}>
+        <div className={styles.gridDecor} aria-hidden="true">
+          <div className={styles.col}></div>
+          <div className={styles.col}></div>
+          <div className={styles.col}></div>
+          <div className={styles.col}></div>
+          <div className={styles.col}></div>
+        </div>
+
             <Welcome />
             <About/>
 
-            <ScrollShowcase/>
+            {/* <ScrollShowcase/>
 
-            <Contact />
+            <Contact /> */}
+      </div>
     </SmoothScroll>
   );
 }

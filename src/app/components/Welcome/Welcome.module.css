@@ -1,87 +1,17 @@
 .welcome_section {
     height: 100vh;
+    grid-column: 1 / -1;
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    overflow: hidden;
-}
-
-/* Divisórias + feixes de luz */
-.welcome_section .col {
-    position: relative;
-    border-right: 1px solid rgb(32, 32, 32);
-    overflow: hidden;
-}
-
-.welcome_section .col:last-child {
-    border-right: none;
-}
-
-.welcome_section .col::after {
-    content: '';
-    position: absolute;
-    top: -60%;
-    left: -1px;
-    width: 2px;
-    height: 60%;
-    background: linear-gradient(to bottom,
-            transparent 0%,
-            rgba(255, 255, 255, 0) 10%,
-            rgba(75, 75, 75, 0.85) 50%,
-            rgba(255, 3, 3, 0) 90%,
-            transparent 100%);
-    animation: lightBeam 4s ease-in-out infinite;
-    animation-delay: var(--beam-delay);
-}
-
-.welcome_section .col:nth-child(1) {
-    --beam-delay: 5s;
-}
-
-.welcome_section .col:nth-child(2) {
-    --beam-delay: 0.6s;
-}
-
-.welcome_section .col:nth-child(3) {
-    --beam-delay: 1.2s;
-}
-
-.welcome_section .col:nth-child(4) {
-    --beam-delay: 2.4s;
-}
-
-.welcome_section .col:nth-child(5) {
-    --beam-delay: 1.8s;
-}
-
-@keyframes lightBeam {
-    0% {
-        top: -60%;
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    75% {
-        opacity: 1;
-    }
-
-    100% {
-        top: 110%;
-        opacity: 0;
-    }
+    background-color: transparent;
+    z-index: 1;
 }
 
 /* Textos sobrepostos */
 .text_content {
-    position: absolute;
     inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: var(--page-grid);
+    align-content: flex-start;
     padding: 0;
     pointer-events: none;
     z-index: 2;
@@ -94,6 +24,7 @@
     color: var(--primary);
     white-space: nowrap;
     display: block;
+    grid-column: 1 / -1;
     width: 100%;
     text-align: center;
 
@@ -117,7 +48,8 @@
     line-height: 45px;
     font-family: var(--font-inter);
     /* posiciona na 2ª coluna aproximadamente */
-    margin-left: calc(20% + 1rem);
+    grid-column: 2 / -1;
+    margin-left: 0;
     margin-top: 3em;
 }
 
@@ -162,7 +94,8 @@
     }
 
     .welcome_subtitle {
-        margin-left: 30px;
+        grid-column: 2 / -1;
+        margin-left: 0;
     }
 
     .welcome_subtitle,

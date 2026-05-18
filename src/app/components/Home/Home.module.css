@@ -1,7 +1,82 @@
 .container{
-    box-sizing: border-box;
-    background-color: rgb(0, 0, 0);
-    color: #d6d6d6;
+    --page-grid: repeat(5, 1fr);
+
+    display: grid;
+    grid-template-columns: var(--page-grid);
+    position: relative;
 }
 
+.gridDecor {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: var(--page-grid);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Divisórias + feixes de luz */
+.col {
+    position: relative;
+    border-right: 1px solid rgb(36, 36, 36);
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.col:last-child {
+    border-right: none;
+}
+
+.col::after {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -1px;
+    width: 2px;
+    height: 60%;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(255, 255, 255, 0) 10%,
+            rgba(75, 75, 75, 0.85) 50%,
+            rgba(255, 3, 3, 0) 90%,
+            transparent 100%);
+    animation: lightBeam 4s ease-in-out infinite;
+    animation-delay: var(--beam-delay);
+}
+
+.col:nth-child(1) {
+    --beam-delay: 5s;
+}
+
+.col:nth-child(2) {
+    --beam-delay: 0.6s;
+}
+
+.col:nth-child(3) {
+    --beam-delay: 1.2s;
+}
+
+.col:nth-child(4) {
+    --beam-delay: 2.4s;
+}
+
+@keyframes lightBeam {
+    0% {
+        top: -60%;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
                 
