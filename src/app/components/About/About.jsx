@@ -18,7 +18,7 @@ const textParts = [
   { text: "técnica.", highlight: true },
 ];
 
-const titleParts = [{ text: "Estética, ritmo e storytelling..." }];
+const titleParts = [{ text: "Estética, ritmo e storytelling." }];
 
 const renderAnimatedText = (parts, extraClassName = "") =>
   parts.map((part, partIndex) =>

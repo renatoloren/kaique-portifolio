@@ -1,5 +1,5 @@
 .about_section {
-    min-height: 145vh;
+    min-height: 120vh;
 
     display: grid;
     grid-template-columns: var(--page-grid);
@@ -54,8 +54,6 @@
 
 .aboutTitle {
     overflow: visible;
-    font-family: var(--font-instrument);
-    font-style: italic;
     font-weight: 200;
     font-size: 48px;
     line-height: 1;
@@ -64,9 +62,7 @@
 }
 
 .aboutTitleWord {
-    font-family: var(--font-instrument);
-    font-style: italic;
-    font-weight: 600;
+    font-weight: 800;
     overflow: visible;
 }
 
@@ -108,19 +104,18 @@
 
     .aboutTextWrapper {
         align-items: center;
-        grid-column: 1 / -1;
+        grid-column: 2 / 5;
         grid-row: 2;
-        padding: 0 1.5em;
     }
 
     .aboutTitle {
         font-size: 34px;
-        text-align: center;
+        text-align: justify;
     }
 
     .aboutText {
         font-size: 17px;
-        text-align: center;
+        text-align: justify;
     }
 
     .highlight {

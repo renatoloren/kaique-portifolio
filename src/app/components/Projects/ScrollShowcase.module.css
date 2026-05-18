@@ -3,6 +3,8 @@
 /* ── seção principal ── */
 .projects_container {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: var(--page-grid);
   position: relative;
   z-index: 1;
 }
@@ -10,6 +12,7 @@
 .section {
   position: relative;
   background: #000;
+  grid-column: 1 / -1;
 }
 
 /* ── viewport sticky ── */
@@ -17,6 +20,9 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* ── vinheta ── */
@@ -33,10 +39,12 @@
 }
 
 .section_title {
+  --project-title-size: 88px;
+
   text-transform: uppercase;
   font-weight: 800;
-  font-size: clamp(16px, 7vw, 1000px);
-  letter-spacing: 0.02em;
+  font-size: var(--project-title-size);
+  letter-spacing: 0;
   white-space: nowrap;
   color: var(--primary);
   z-index: 0;
@@ -44,12 +52,35 @@
   top: 0;
   text-align: center;
   margin-bottom: 0.5em;
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  line-height: 0.9;
+}
+
+.sectionTitleWordWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.sectionTitleWordWrap:not(:last-child) {
+  margin-right: 0.30em;
+}
+
+.sectionTitleWordInner {
+  display: inline-block;
+  will-change: transform, opacity;
 }
 
 /* ── camada de mídia ── */
 .mediaLayer {
   position: absolute;
   inset: 0;
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .mediaLayer img,
@@ -85,6 +116,8 @@
   justify-content: center;
   text-align: center;
   padding: 0 2rem;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .textLabel {
@@ -157,13 +190,6 @@
   width: 4px;
   height: 4px;
   transition: all 0.3s;
-}
-
-.dotActive {
-  background: #fff;
-  width: 5px;
-  height: 5px;
-  transform: scale(1.5);
 }
 
 /* ── hint de scroll ── */
@@ -270,4 +296,25 @@
 
 .modalClose:hover {
   color: #fff;
+}
+
+@media (max-width: 690px) {
+  .section_title {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: normal;
+    line-height: 0.86;
+  }
+
+  .sectionTitleWordWrap {
+    display: block;
+    width: 100%;
+    text-align: start;
+  }
+
+  .sectionTitleWordWrap:not(:last-child) {
+    margin-right: 0;
+  }
 }

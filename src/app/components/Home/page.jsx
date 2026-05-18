@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import Header from '../Header/Header';
-import Welcome from '../Welcome/Welcome';
-import About from '../About/About';
-import Contact from '../Contact/Contact';
-import styles from './Home.module.css'
-import ScrollShowcase from '../Projects/ScrollShowcase';
-import SmoothScroll from '../SmoothScroll';
+import Header from "../Header/Header";
+import Welcome from "../Welcome/Welcome";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+import styles from "./Home.module.css";
+import ScrollShowcase from "../Projects/ScrollShowcase";
+import SmoothScroll from "../SmoothScroll";
 
 export default function Home() {
   return (
@@ -21,12 +21,12 @@ export default function Home() {
           <div className={styles.col}></div>
         </div>
 
-            <Welcome />
-            <About/>
+        <Welcome />
+        <About />
 
-            {/* <ScrollShowcase/>
+        <ScrollShowcase />
 
-            <Contact /> */}
+        <Contact />
       </div>
     </SmoothScroll>
   );
